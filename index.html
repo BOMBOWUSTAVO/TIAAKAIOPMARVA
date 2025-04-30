@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jogo das Cores</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2.5rem;
+      color: #444;
+    }
+
+    #target-color, #timer {
+      font-size: 1.5rem;
+      margin: 15px 0;
+      background: white;
+      padding: 10px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    video {
+      width: 90%;
+      max-width: 320px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-bottom: 40px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      #target-color, #timer {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Jogo das Cores</h1>
+  <div id="target-color">Clique em "Iniciar"</div>
+  <div id="timer">Tempo: 10</div>
+
+  <video id="video" width="224" height="224" autoplay playsinline></video>
+  <canvas id="canvas" width="224" height="224" style="display:none;"></canvas>
+
+  <button onclick="startGame()">Iniciar</button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
+
